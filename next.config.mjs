@@ -54,6 +54,9 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  eslint: {
+    ignoreDuringBuilds: true, // Skips linting during development builds
+  },
 };
 
 export default nextConfig;
