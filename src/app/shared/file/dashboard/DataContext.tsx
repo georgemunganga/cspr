@@ -1,9 +1,13 @@
-// context/DataContext.tsx
-
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { fetchData } from '@/app/api/dashboard/dataService';
 
-type Data = Record<string, unknown>; // Define your data structure here based on API response
+// Define the data structure based on API response
+type Data = {
+    // Replace with actual data structure
+    id: string;
+    name: string;
+    value: number;
+};
 
 type DataContextType = {
     data: Data | null;
@@ -15,12 +19,13 @@ type DataContextType = {
 const DataContext = createContext<DataContextType>({
     data: null,
     isLoading: false,
+    setData: () => {}, // Provide a default empty function
     error: null,
 });
 
 export const useDataContext = () => useContext(DataContext);
 
-export const DataProvider: React.FC = ({ children }) => {
+export const DataProvider: React.FC<{children: ReactNode}> = ({ children }) => {
     const [data, setData] = useState<Data | null>(null);
     const [isLoading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
@@ -30,10 +35,10 @@ export const DataProvider: React.FC = ({ children }) => {
             try {
                 const result = await fetchData();
                 setData(result);
-                setLoading(false);
-            } catch (error) {
+            } catch (error: any) {
                 console.error('Error fetching data:', error);
                 setError('Failed to fetch data');
+            } finally {
                 setLoading(false);
             }
         };
@@ -42,7 +47,7 @@ export const DataProvider: React.FC = ({ children }) => {
     }, []);
 
     return (
-        <DataContext.Provider value={{ data, isLoading, error }}>
+        <DataContext.Provider value={{ data, isLoading, setData, error }}>
             {children}
         </DataContext.Provider>
     );
