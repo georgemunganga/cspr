@@ -1,7 +1,7 @@
 {
-  "name": "isomorphic",
+  "name": "CSPR",
   "version": "6.8.0",
-  "description": "A nextjs template to build dashboard",
+  "description": "Analytics Dashboard",
   "private": true,
   "scripts": {
     "clean": "rimraf -g \"{node_modules,.next,.cache}\"",
