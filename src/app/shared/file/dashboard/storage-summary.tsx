@@ -23,7 +23,7 @@ function CustomLabel(props: any) {
         dominantBaseline="central"
       >
         <tspan alignmentBaseline="middle" fontSize="36px">
-          {props.value1} GB
+          {props.value1} people
         </tspan>
       </text>
       <text

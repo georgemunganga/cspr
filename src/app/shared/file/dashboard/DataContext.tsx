@@ -1,13 +1,9 @@
-import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+// context/DataContext.tsx
+
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { fetchData } from '@/app/api/dashboard/dataService';
 
-// Define the data structure based on API response
-type Data = {
-    // Replace with actual data structure
-    id: string;
-    name: string;
-    value: number;
-};
+type Data = Record<string, unknown>; // Define your data structure here based on API response
 
 type DataContextType = {
     data: Data | null;
@@ -19,13 +15,12 @@ type DataContextType = {
 const DataContext = createContext<DataContextType>({
     data: null,
     isLoading: false,
-    setData: () => {}, // Provide a default empty function
     error: null,
 });
 
 export const useDataContext = () => useContext(DataContext);
 
-export const DataProvider: React.FC<{children: ReactNode}> = ({ children }) => {
+export const DataProvider: React.FC = ({ children }) => {
     const [data, setData] = useState<Data | null>(null);
     const [isLoading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
@@ -35,10 +30,10 @@ export const DataProvider: React.FC<{children: ReactNode}> = ({ children }) => {
             try {
                 const result = await fetchData();
                 setData(result);
-            } catch (error: any) {
+                setLoading(false);
+            } catch (error) {
                 console.error('Error fetching data:', error);
                 setError('Failed to fetch data');
-            } finally {
                 setLoading(false);
             }
         };
@@ -47,7 +42,7 @@ export const DataProvider: React.FC<{children: ReactNode}> = ({ children }) => {
     }, []);
 
     return (
-        <DataContext.Provider value={{ data, isLoading, setData, error }}>
+        <DataContext.Provider value={{ data, isLoading, error }}>
             {children}
         </DataContext.Provider>
     );
