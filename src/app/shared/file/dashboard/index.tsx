@@ -18,16 +18,14 @@ import type { GetServerSideProps } from 'next';
 
 // Define the DashboardProps interface
 interface DashboardProps {
-  data: unknown; // Define the correct type for your data if possible
-  errors: string | null;  
+  data: DataItem[]; // Define the correct type for your data if possible
+  errors: string | null;
 }
 
-// Define the FileDashboard component
 const FileDashboard: React.FC<DashboardProps> = ({ data, errors }) => {
-  const [fileData, setFileData] = useState<DataItem[]>([]); // Initialize fileData state
-  const [isLoading, setLoading] = useState<boolean>(false); // Initialize isLoading state
-  const [error, setError] = useState<string | null>(null); // Initialize error state
-
+  const [fileData, setFileData] = useState<DataItem[]>([]);
+  const [isLoading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Function to fetch data from API
   const fetchDataFromApi = async () => {
