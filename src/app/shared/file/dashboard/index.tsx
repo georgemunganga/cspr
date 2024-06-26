@@ -65,7 +65,9 @@ const FileDashboard: React.FC<DashboardProps> = ({ data, errors }) => {
     return <p>No data available.</p>;
   }else{
     setOpen(true);
-    return (<Modal
+    return (
+      <>
+    <Modal
       isOpen={open}
       onClose={() => setOpen(false)}
       overlayClassName="dark:bg-opacity-20 dark:bg-gray-50 dark:backdrop-blur-sm"
@@ -73,7 +75,8 @@ const FileDashboard: React.FC<DashboardProps> = ({ data, errors }) => {
       className="z-[9999]"
     >
     {JSON.stringify(fileData)}
-    </Modal>)
+    </Modal>
+    </>)
   }
   // Render the dashboard if data is available
   return (
