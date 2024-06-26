@@ -3,6 +3,7 @@ import OtpForm from './otp-form';
 import AuthWrapperOne from '@/app/shared/auth-layout/auth-wrapper-one';
 import UnderlineShape from '@/components/shape/underline';
 import Image from 'next/image';
+import bg from "@public/bg.jpg"
 
 export default function OtpPage() {
   return (
@@ -16,15 +17,13 @@ export default function OtpPage() {
           </span>
         </>
       }
-      bannerTitle="The simplest way to manage your workspace."
+      bannerTitle="Monitoring Impact: Tracking Change in People's Lives."
       bannerDescription="Amet minim mollit non deserunt ullamco est sit aliqua dolor do
     amet sint velit officia consequat duis."
       pageImage={
         <div className="relative mx-auto aspect-[4/3.37] w-[500px] xl:w-[620px] 2xl:w-[820px]">
           <Image
-            src={
-              'https://isomorphic-furyroad.s3.amazonaws.com/public/auth/sign-up.webp'
-            }
+            src={ bg } style={{ borderRadius: "2rem"}}
             alt="Sign Up Thumbnail"
             fill
             priority
