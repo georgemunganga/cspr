@@ -79,7 +79,7 @@ export const allFilesData = [
       name: 'utterly_modernity_acidly.xml',
       avatar: xmlIcon,
     },
-    size: '6.7GB',
+    size: '670 People',
     type: 'xml',
     modified: '2023-03-07T22:27:09.014Z',
     shared: [
@@ -113,7 +113,7 @@ export const allFilesData = [
       name: 'from_powerful.webp',
       avatar: imageIcon,
     },
-    size: '2.3GB',
+    size: '2.3people',
     type: 'image',
     modified: '2023-11-24T03:30:18.409Z',
     shared: [
@@ -130,7 +130,7 @@ export const allFilesData = [
       name: 'helplessly',
       avatar: folderIcon,
     },
-    size: '1.4GB',
+    size: '1.4people',
     type: 'folder',
     modified: '2023-01-13T14:18:23.860Z',
     shared: [
@@ -147,7 +147,7 @@ export const allFilesData = [
       name: 'white_which.gif',
       avatar: imageIcon,
     },
-    size: '6.7GB',
+    size: '6.7people',
     type: 'image',
     modified: '2022-11-01T00:18:22.613Z',
     shared: [
@@ -164,7 +164,7 @@ export const allFilesData = [
       name: 'associate_hence_claim.gif',
       avatar: imageIcon,
     },
-    size: '9GB',
+    size: '9people',
     type: 'image',
     modified: '2023-03-23T04:32:48.697Z',
     shared: [
@@ -181,7 +181,7 @@ export const allFilesData = [
       name: 'who_enterprise.pdf',
       avatar: pdfIcon,
     },
-    size: '4.4GB',
+    size: '4.4people',
     type: 'pdf',
     modified: '2022-09-30T17:37:19.899Z',
     shared: [
@@ -198,7 +198,7 @@ export const allFilesData = [
       name: 'gallivant.xml',
       avatar: xmlIcon,
     },
-    size: '4.9GB',
+    size: '4.9people',
     type: 'xml',
     modified: '2024-05-28T19:56:28.077Z',
     shared: [

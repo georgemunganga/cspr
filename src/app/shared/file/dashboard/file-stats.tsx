@@ -9,6 +9,12 @@ import CircleProgressBar from '@/components/charts/circle-progressbar';
 import TrendingUpIcon from '@/components/icons/trending-up';
 import TrendingDownIcon from '@/components/icons/trending-down';
 
+import { getColumns } from '@/app/shared/file/provinces/columns';
+
+interface fileData {
+  className?: string;
+  data: string; // Assuming data is passed as a JSON string
+}
 type FileStatsType = {
   className?: string;
 };
@@ -46,7 +52,7 @@ const filesStatData = [
   },
   {
     id: 4,
-    title: 'Total Musics',
+    title: 'Total Schools',
     metric: '63,076 People',
     fill: '#3872FA',
     percentage: 54,

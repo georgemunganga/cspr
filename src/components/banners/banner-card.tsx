@@ -25,7 +25,7 @@ export default function BannerCard({
             ? bgImage
             : 'https://isomorphic-furyroad.s3.amazonaws.com/public/upgrade-storage-bg.webp'
         }
-        alt="Upgrade Storage"
+        alt="Subscribe to get updates!"
         fill
         sizes="(max-width: 768px) 100vw"
         className={imageClassName}

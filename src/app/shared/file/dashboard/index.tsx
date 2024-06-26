@@ -5,7 +5,7 @@ import FileStats from '@/app/shared/file/dashboard/file-stats';
 import StorageReport from '@/app/shared/file/dashboard/storage-report';
 import ActivityReport from '@/app/shared/file/dashboard/activity-report';
 import UpgradeStorage from '@/app/shared/file/dashboard/upgrade-storage';
-
+import { Modal } from 'rizzui';
 import Provinces from '@/app/shared/file/provinces';
 import { fetchData } from '@/app/api/dashboard/dataService';
 import type { DataItem } from '@/app/types'; // Adjust DataItem type based on your actual data structure
@@ -22,6 +22,7 @@ const FileDashboard: React.FC<DashboardProps> = ({ data, errors }) => {
   const [fileData, setFileData] = useState<DataItem[]>([]); // Initialize fileData state
   const [isLoading, setLoading] = useState<boolean>(false); // Initialize isLoading state
   const [error, setError] = useState<string | null>(null); // Initialize error state
+  const [open, setOpen] = useState(false);
 
 
   // Function to fetch data from API
@@ -54,6 +55,7 @@ const FileDashboard: React.FC<DashboardProps> = ({ data, errors }) => {
     );
   }
 
+
   if (error) {
     return <div> <p>Error: {error}! check your internet connection or data server!</p>
       <button onClick={fetchDataFromApi}>Retry</button>  </div>;
@@ -61,8 +63,18 @@ const FileDashboard: React.FC<DashboardProps> = ({ data, errors }) => {
 
   if (fileData.length === 0) {
     return <p>No data available.</p>;
+  }else{
+    setOpen(true);
+    return (<Modal
+      isOpen={open}
+      onClose={() => setOpen(false)}
+      overlayClassName="dark:bg-opacity-20 dark:bg-gray-50 dark:backdrop-blur-sm"
+      containerClassName="dark:bg-gray-100/90 overflow-hidden dark:backdrop-blur-xl"
+      className="z-[9999]"
+    >
+    {JSON.stringify(fileData)}
+    </Modal>)
   }
-
   // Render the dashboard if data is available
   return (
     <div className="container">

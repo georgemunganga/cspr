@@ -13,7 +13,7 @@ export default function UpgradeStorage({ className }: { className?: string }) {
   return (
     <div className={className}>
       <BannerCard
-        title="Upgrade Storage"
+        title="Subscribe to get updates!"
         className="min-h-[280px] overflow-hidden rounded-lg"
       >
         <div className="my-5">
@@ -31,7 +31,7 @@ export default function UpgradeStorage({ className }: { className?: string }) {
           href={'/'}
           className="inline-block rounded-md bg-white px-4 py-2.5 text-sm font-medium text-gray-900 dark:bg-gray-100"
         >
-          Upgrade Storage
+          Subscribe to get updates!
         </Link>
       </BannerCard>
     </div>

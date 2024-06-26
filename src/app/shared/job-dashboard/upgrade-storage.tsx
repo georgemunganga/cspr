@@ -33,7 +33,7 @@ export default function JobUpgradeStorage({
             width={150}
             height={150}
             src={UpStorageImg}
-            alt="Upgrade Storage"
+            alt="Subscribe to get updates!"
             sizes="(max-width: 768px) 100vw"
           />
         </div>
