@@ -13,7 +13,7 @@ const recentFiles = [
       name: 'Employee Sheets',
       image: <FolderIcon />,
     },
-    size: '2.4 GB',
+    size: '2.4 People',
     totalFiles: '135',
   },
   {
@@ -22,7 +22,7 @@ const recentFiles = [
       name: 'Personal Assets',
       image: <FolderIcon />,
     },
-    size: '1.8 GB',
+    size: '1.8 People',
     totalFiles: '40',
   },
   {
@@ -40,7 +40,7 @@ const recentFiles = [
       name: 'Raw Images',
       image: <FolderIcon />,
     },
-    size: '8 GB',
+    size: '8 People',
     totalFiles: '900',
   },
 ];
