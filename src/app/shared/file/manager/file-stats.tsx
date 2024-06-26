@@ -20,7 +20,7 @@ const filesStatData = [
   {
     id: 1,
     title: 'Total Storage',
-    metric: '94 People',
+    metric: '94 GB',
     icon: <DriveIcon className="h-12 w-10" />,
     fill: '#4c5c75',
     percentage: 94,
@@ -28,7 +28,7 @@ const filesStatData = [
   {
     id: 2,
     title: 'Images',
-    metric: '26 People',
+    metric: '26 GB',
     icon: <ImageIcon className="h-10 w-10" />,
     fill: '#f3962d',
     percentage: 26,
@@ -36,7 +36,7 @@ const filesStatData = [
   {
     id: 3,
     title: 'Documents',
-    metric: '38 People',
+    metric: '38 GB',
     icon: <DocIcon className="h-10 w-10" />,
     fill: '#6d98ff',
     percentage: 38,
@@ -44,7 +44,7 @@ const filesStatData = [
   {
     id: 4,
     title: 'Audios',
-    metric: '54 People',
+    metric: '54 GB',
     icon: <MusicIcon className="h-10 w-10" />,
     fill: '#fbc13b',
     percentage: 54,
@@ -52,7 +52,7 @@ const filesStatData = [
   {
     id: 5,
     title: 'Videos',
-    metric: '67 People',
+    metric: '67 GB',
     icon: <VideoIcon className="h-10 w-10" />,
     fill: '#e16244',
     percentage: 67,
@@ -120,7 +120,7 @@ export default function FileStats({ className }: FileStatsType) {
                     >
                       {stat.metric}
                       <span className="inline-block text-sm font-normal text-gray-500">
-                        &nbsp;of 100 people
+                        &nbsp;of 100 GB
                       </span>
                     </Title>
                   </div>

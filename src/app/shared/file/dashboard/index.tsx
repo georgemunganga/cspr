@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import FileStats from '@/app/shared/file/dashboard/file-stats';
+'use client';
+
 import StorageReport from '@/app/shared/file/dashboard/storage-report';
+import FileStats from '@/app/shared/file/dashboard/file-stats';
+import StorageSummary from '@/app/shared/file/dashboard/storage-summary';
 import RecentFiles from '@/app/shared/file/dashboard/recent-files';
 import QuickAccess from '@/app/shared/file/dashboard/quick-access';
 import ActivityReport from '@/app/shared/file/dashboard/activity-report';
@@ -8,75 +10,25 @@ import Members from '@/app/shared/file/dashboard/members';
 import FileListTable from '@/app/shared/file/dashboard/file-list/table';
 import UpgradeStorage from '@/app/shared/file/dashboard/upgrade-storage';
 import RecentActivities from '@/app/shared/file/dashboard/recent-activities';
-import Provinces from '@/app/shared/file/provinces';
-import { fetchData } from '@/app/api/dashboard/dataService';
-import type { DataItem } from '@/app/types'; // Adjust DataItem type based on your actual data structure
 
-interface DashboardProps {
-  data: DataItem[];
-  errors: string | null;
-}
-
-const FileDashboard: React.FC<DashboardProps> = ({ data, errors }) => {
-  const [fileData, setFileData] = useState<DataItem[]>([]);
-  const [isLoading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
-
-  // Function to fetch data from API
-  const fetchDataFromApi = async () => {
-    setLoading(true);
-    try {
-      const result = await fetchData(); // Example: Replace with your actual fetchData function
-      setFileData(result);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      setError('Failed to fetch data');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchDataFromApi();
-  }, []);
-
-  if (isLoading) {
-    return <div><p>Loading...</p></div>;
-  }
-
-  if (error) {
-    return (
-      <div>
-        <p>Error: {error}! Check your internet connection or data server!</p>
-        <button onClick={fetchDataFromApi}>Retry</button>
-      </div>
-    );
-  }
-
-  if (fileData.length === 0) {
-    return <p>No data available.</p>;
-  }
-
+export default function FileDashboard() {
   return (
-    <div className="container">
+    <div className="@container">
       <FileStats className="mb-5 2xl:mb-8" />
-      <div className="mb-6 grid grid-cols-1 gap-6 4xl:grid-cols-12 2xl:mb-8 2xl:gap-8">
-        <StorageReport className="container 4xl:col-span-8 96.937rem:col-span-9" />
+      <div className="mb-6 grid grid-cols-1 gap-6 @4xl:grid-cols-12 2xl:mb-8 2xl:gap-8">
+        <StorageReport className="@container @4xl:col-span-8 @[96.937rem]:col-span-9" />
+        <StorageSummary className="@4xl:col-span-4 @[96.937rem]:col-span-3" />
       </div>
-      <div className="grid grid-cols-1 gap-6 container lg:grid-cols-12 2xl:gap-8">
-        <div className="col-span-full flex flex-col gap-6 5xl:col-span-12 2xl:gap-8 3xl:col-span-12">
-          <Provinces data={fileData} />
-        </div>
-      </div>
-      <div className="grid grid-cols-1 gap-6 container lg:grid-cols-12 2xl:gap-8">
-        <div className="col-span-full flex flex-col gap-6 5xl:col-span-8 2xl:gap-8 3xl:col-span-9">
-          <Provinces data={fileData} />
+
+      <div className="grid grid-cols-1 gap-6 @container lg:grid-cols-12 2xl:gap-8 ">
+        <div className="col-span-full flex flex-col gap-6 @5xl:col-span-8 2xl:gap-8 3xl:col-span-9">
           <QuickAccess />
           <RecentFiles />
           <ActivityReport />
           <FileListTable />
         </div>
-        <div className="col-span-full flex flex-col gap-6 5xl:col-span-4 2xl:gap-8 3xl:col-span-3">
+
+        <div className="col-span-full flex flex-col gap-6 @5xl:col-span-4 2xl:gap-8 3xl:col-span-3">
           <RecentActivities />
           <Members />
           <UpgradeStorage />
@@ -84,6 +36,4 @@ const FileDashboard: React.FC<DashboardProps> = ({ data, errors }) => {
       </div>
     </div>
   );
-};
-
-export default FileDashboard;
+}

@@ -122,12 +122,12 @@ export default function StorageReport({ className }: { className?: string }) {
 
   return (
     <WidgetCard
-      title={'Total People Reached'}
+      title={'Total Storage used'}
       titleClassName="font-normal text-gray-700 sm:text-base font-inter"
       description={
         <div className="flex items-center justify-start">
           <Title as="h2" className="me-2 font-semibold">
-            7,000 People
+            105,000 GB
           </Title>
           <Text className="flex items-center leading-none text-gray-500">
             <Text

@@ -5,8 +5,6 @@ import {
   PiHeadsetDuotone,
   PiPackageDuotone,
   PiChartBarDuotone,
-  PiChartBar,
-  PiUsers,
   PiCurrencyDollarDuotone,
   PiSquaresFourDuotone,
   PiGridFourDuotone,
@@ -46,8 +44,6 @@ import {
   PiCalendarDuotone,
   PiShapesDuotone,
   PiNewspaperClippingDuotone,
-  PiBook,
-  PiLink
 } from 'react-icons/pi';
 
 // Note: do not add href in the label object, it is rendering as label
@@ -58,40 +54,40 @@ export const menuItems = [
   },
   // label end
   {
-    name: 'Project Overview',
+    name: 'File Manager',
     href: '/',
-    icon: <PiChartBar />,
+    icon: <PiFolder />,
   },
   {
-    name: 'Pre-test',
+    name: 'Appointment',
     href: routes.appointment.dashboard,
+    icon: <PiCalendarDuotone />,
+  },
+  {
+    name: 'Executive',
+    href: routes.executive.dashboard,
     icon: <PiBriefcaseDuotone />,
   },
   {
-    name: 'Social Accountability',
-    href: routes.executive.dashboard,
-    icon: <PiUsers />,
-  },
-  {
-    name: 'Awareness and sensitization',
+    name: 'Job Board',
     href: routes.jobBoard.dashboard,
     icon: <PiShapesDuotone />,
-   /// badge: 'NEW',
+    badge: 'NEW',
   },
   {
-    name: 'Peer to Peer Learning',
+    name: 'Financial',
     href: routes.financial.dashboard,
-    icon: <PiLink />,
+    icon: <PiCurrencyCircleDollarDuotone />,
   },
   {
-    name: 'GRM',
+    name: 'Logistics',
     href: routes.logistics.dashboard,
     icon: <PiPackageDuotone />,
   },
   {
-    name: 'Education',
+    name: 'E-Commerce',
     href: routes.eCommerce.dashboard,
-    icon: <PiBook />,
+    icon: <PiShoppingCartDuotone />,
   },
   {
     name: 'Analytics',
@@ -104,7 +100,7 @@ export const menuItems = [
     href: routes.support.dashboard,
     icon: <PiHeadsetDuotone />,
   },
-  /*
+
   // label start
   {
     name: 'Apps Kit',
@@ -590,5 +586,5 @@ export const menuItems = [
         href: routes.auth.otp5,
       },
     ],
-  },*/
+  },
 ];

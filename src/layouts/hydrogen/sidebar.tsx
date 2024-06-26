@@ -4,8 +4,6 @@ import Link from 'next/link';
 import cn from '@/utils/class-names';
 import SimpleBar from '@/components/ui/simplebar';
 import Logo from '@/components/logo';
-
-
 import { SidebarMenu } from './sidebar-menu';
 
 export default function Sidebar({ className }: { className?: string }) {
@@ -22,7 +20,7 @@ export default function Sidebar({ className }: { className?: string }) {
           aria-label="Site Logo"
           className="text-gray-800 hover:text-gray-900"
         >
-          <Logo className="max-w-[50px]" />
+          <Logo className="max-w-[155px]" />
         </Link>
       </div>
 

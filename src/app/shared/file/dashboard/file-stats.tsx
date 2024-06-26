@@ -16,8 +16,8 @@ type FileStatsType = {
 const filesStatData = [
   {
     id: 1,
-    title: 'Total Provinces',
-    metric: '3',
+    title: 'Total Images',
+    metric: '36,476 GB',
     fill: '#3872FA',
     percentage: 32,
     increased: true,
@@ -26,8 +26,8 @@ const filesStatData = [
   },
   {
     id: 2,
-    title: 'Total Districts',
-    metric: '5',
+    title: 'Total Videos',
+    metric: '53,406 GB',
     fill: '#3872FA',
     percentage: 48,
     increased: false,
@@ -36,8 +36,8 @@ const filesStatData = [
   },
   {
     id: 3,
-    title: 'Total Reach',
-    metric: '7000',
+    title: 'Total Documents',
+    metric: '90,875 GB',
     fill: '#EE0000',
     percentage: 89,
     increased: true,
@@ -47,7 +47,7 @@ const filesStatData = [
   {
     id: 4,
     title: 'Total Musics',
-    metric: '63,076 People',
+    metric: '63,076 GB',
     fill: '#3872FA',
     percentage: 54,
     increased: true,

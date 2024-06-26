@@ -6,7 +6,7 @@ import isEqual from 'lodash/isEqual';
 import { pagesOptions } from './pages-options';
 
 export const authOptions: NextAuthOptions = {
-  debug: true,
+  // debug: true,
   pages: {
     ...pagesOptions,
   },
@@ -73,5 +73,4 @@ export const authOptions: NextAuthOptions = {
       allowDangerousEmailAccountLinking: true,
     }),
   ],
-  secret: process.env.SECRET,
 };
