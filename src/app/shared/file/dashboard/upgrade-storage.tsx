@@ -28,7 +28,7 @@ export default function UpgradeStorage({ className }: { className?: string }) {
           ))}
         </div>
         <Link
-          href={'/file'}
+          href={'/'}
           className="inline-block rounded-md bg-white px-4 py-2.5 text-sm font-medium text-gray-900 dark:bg-gray-100"
         >
           Upgrade Storage

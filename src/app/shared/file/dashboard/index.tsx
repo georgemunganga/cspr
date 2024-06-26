@@ -3,14 +3,9 @@
 import React, { useEffect, useState } from 'react';
 import FileStats from '@/app/shared/file/dashboard/file-stats';
 import StorageReport from '@/app/shared/file/dashboard/storage-report';
-//import StorageSummary from '@/app/shared/file/dashboard/storage-summary';
-import RecentFiles from '@/app/shared/file/dashboard/recent-files';
-import QuickAccess from '@/app/shared/file/dashboard/quick-access';
 import ActivityReport from '@/app/shared/file/dashboard/activity-report';
-import Members from '@/app/shared/file/dashboard/members';
-import FileListTable from '@/app/shared/file/dashboard/file-list/table';
 import UpgradeStorage from '@/app/shared/file/dashboard/upgrade-storage';
-import RecentActivities from '@/app/shared/file/dashboard/recent-activities';
+
 import Provinces from '@/app/shared/file/provinces';
 import { fetchData } from '@/app/api/dashboard/dataService';
 import type { DataItem } from '@/app/types'; // Adjust DataItem type based on your actual data structure
@@ -83,13 +78,13 @@ const FileDashboard: React.FC<DashboardProps> = ({ data, errors }) => {
     <div className="grid grid-cols-1 gap-6 container lg:grid-cols-12 2xl:gap-8">
       <div className="col-span-full flex flex-col gap-6 5xl:col-span-8 2xl:gap-8 3xl:col-span-9">
         <Provinces data={JSON.stringify(fileData)} />
-        <RecentFiles />
+        
         <ActivityReport />
-        <FileListTable />
+   
       </div>
       <div className="col-span-full flex flex-col gap-6 5xl:col-span-4 2xl:gap-8 3xl:col-span-3">
-        <RecentActivities />
-        <Members />
+      
+   
         <UpgradeStorage />
       </div>
     </div>

@@ -19,18 +19,18 @@ import { useMedia } from '@/hooks/use-media';
 const data = [
   {
     month: 'Jan',
-    downloads: 2000,
-    uploads: 1000,
+    downloads: 200,
+    uploads: 10,
   },
   {
     month: 'Feb',
-    downloads: 4200,
-    uploads: 3700,
+    downloads: 42,
+    uploads: 370,
   },
   {
     month: 'Mar',
-    downloads: 3000,
-    uploads: 5800,
+    downloads: 300,
+    uploads: 580,
   },
   {
     month: 'Apr',
@@ -74,8 +74,8 @@ const data = [
   },
   {
     month: 'Dec',
-    downloads: 7500,
-    uploads: 3000,
+    downloads: 750,
+    uploads: 300,
   },
 ];
 
@@ -84,7 +84,7 @@ export default function ActivityReport({ className }: { className?: string }) {
 
   return (
     <WidgetCard
-      title={'Activity'}
+      title={'Survey Activity'}
       titleClassName="text-lg xl:text-xl font-semibold"
       className={className}
     >
