@@ -5,7 +5,6 @@ import FileStats from '@/app/shared/file/dashboard/file-stats';
 import StorageReport from '@/app/shared/file/dashboard/storage-report';
 import ActivityReport from '@/app/shared/file/dashboard/activity-report';
 import UpgradeStorage from '@/app/shared/file/dashboard/upgrade-storage';
-import { Modal } from 'rizzui';
 import Provinces from '@/app/shared/file/provinces';
 import { fetchData } from '@/app/api/dashboard/dataService';
 import type { DataItem } from '@/app/types'; // Adjust DataItem type based on your actual data structure
@@ -22,7 +21,7 @@ const FileDashboard: React.FC<DashboardProps> = ({ data, errors }) => {
   const [fileData, setFileData] = useState<DataItem[]>([]); // Initialize fileData state
   const [isLoading, setLoading] = useState<boolean>(false); // Initialize isLoading state
   const [error, setError] = useState<string | null>(null); // Initialize error state
-  const [open, setOpen] = useState(false);
+
 
 
   // Function to fetch data from API
@@ -47,8 +46,7 @@ const FileDashboard: React.FC<DashboardProps> = ({ data, errors }) => {
 
   // Conditional rendering based on loading and error states
   if (isLoading) {
-    setOpen(true);
-    return (
+      return (
       <div>
         <p>Loading...</p>
       </div>
@@ -71,15 +69,6 @@ const FileDashboard: React.FC<DashboardProps> = ({ data, errors }) => {
   return (
     <div className="container">
     
-    <Modal
-      isOpen={open}
-      onClose={() => setOpen(false)}
-      overlayClassName="dark:bg-opacity-20 dark:bg-gray-50 dark:backdrop-blur-sm"
-      containerClassName="dark:bg-gray-100/90 overflow-hidden dark:backdrop-blur-xl"
-      className="z-[9999]"
-    ><h1>hello</h1>
-    
-    </Modal>
     <FileStats className="mb-5 2xl:mb-8" />
     <div className="mb-6 grid grid-cols-1 gap-6 4xl:grid-cols-12 2xl:mb-8 2xl:gap-8">
       <StorageReport className="container 4xl:col-span-8 96.937rem:col-span-9" />
