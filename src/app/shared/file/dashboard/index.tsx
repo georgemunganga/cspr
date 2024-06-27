@@ -47,7 +47,7 @@ const FileDashboard: React.FC<DashboardProps> = ({ data, errors }) => {
 
   // Conditional rendering based on loading and error states
   if (isLoading) {
-    
+    setOpen(true);
     return (
       <div>
         <p>Loading...</p>
@@ -63,24 +63,23 @@ const FileDashboard: React.FC<DashboardProps> = ({ data, errors }) => {
 
   if (fileData.length === 0) {
     return <p>No data available.</p>;
-  }else{
-    setOpen(true);
-    return (
-      <>
+  }
+    
+  
+  
+  // Render the dashboard if data is available
+  return (
+    <div className="container">
+    
     <Modal
       isOpen={open}
       onClose={() => setOpen(false)}
       overlayClassName="dark:bg-opacity-20 dark:bg-gray-50 dark:backdrop-blur-sm"
       containerClassName="dark:bg-gray-100/90 overflow-hidden dark:backdrop-blur-xl"
       className="z-[9999]"
-    >
-    {JSON.stringify(fileData)}
+    ><h1>hello</h1>
+    
     </Modal>
-    </>)
-  }
-  // Render the dashboard if data is available
-  return (
-    <div className="container">
     <FileStats className="mb-5 2xl:mb-8" />
     <div className="mb-6 grid grid-cols-1 gap-6 4xl:grid-cols-12 2xl:mb-8 2xl:gap-8">
       <StorageReport className="container 4xl:col-span-8 96.937rem:col-span-9" />
